@@ -27,7 +27,7 @@ Consumer Cellular is an American Mobile Virtual Network Operator (MVNO) that pro
 ## Project Structure
 
 ```
-{customer-name}-intelligence-agent/
+/
 ├── README.md                           # Project overview and setup instructions
 ├── docs/
 │   ├── AGENT_SETUP.md                 # Step-by-step agent configuration guide
