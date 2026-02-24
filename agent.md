@@ -28,32 +28,35 @@ Consumer Cellular is an American Mobile Virtual Network Operator (MVNO) that pro
 
 ```
 /
-├── README.md                           # Project overview and setup instructions
+├── README.md                              # Project overview with SVG diagrams
+├── Snowflake_Logo.svg                     # Snowflake branding logo
+├── agent.md                               # This template file
 ├── docs/
-│   ├── AGENT_SETUP.md                 # Step-by-step agent configuration guide
-│   ├── DEPLOYMENT_SUMMARY.md          # Current deployment status
-│   ├── questions.md                   # 30+ complex test questions
+│   ├── AGENT_SETUP.md                     # Step-by-step agent configuration guide
+│   ├── DEPLOYMENT_SUMMARY.md              # Current deployment status with SVG diagrams
+│   ├── questions.md                       # 50+ complex test questions
 │   └── images/
-│       ├── architecture.svg           # System architecture diagram
-│       ├── deployment_flow.svg        # Deployment workflow diagram
-│       └── ml_models.svg              # ML pipeline visualization
+│       ├── architecture.svg               # System architecture diagram
+│       ├── deployment_flow.svg            # Deployment workflow diagram
+│       ├── ml_models.svg                  # ML pipeline visualization
+│       └── project_structure.svg          # Project file structure diagram
 ├── notebooks/
-│   └── ml_financial_models.ipynb      # ML model training (optional)
+│   └── ml_financial_models.ipynb          # ML model training notebook
 └── sql/
     ├── setup/
-    │   ├── 01_database_and_schema.sql # Database, schemas, warehouse
-    │   └── 02_create_tables.sql       # All table definitions
+    │   ├── 01_database_and_schema.sql     # Database, schemas, warehouse
+    │   └── 02_create_tables.sql           # All table definitions
     ├── data/
     │   └── 03_generate_synthetic_data.sql # Test data generation
     ├── views/
-    │   ├── 04_create_views.sql        # Analytical views
-    │   └── 05_create_semantic_views.sql # Semantic views for Cortex Analyst
+    │   ├── 04_create_views.sql            # Analytical views
+    │   └── 05_create_semantic_views.sql   # Semantic views for Cortex Analyst
     ├── search/
-    │   └── 06_create_cortex_search.sql # Cortex Search services
+    │   └── 06_create_cortex_search.sql    # Cortex Search services
     ├── models/
-    │   └── 07_ml_model_functions.sql  # ML prediction views and agent functions
+    │   └── 07_ml_model_functions.sql      # ML prediction UDFs
     └── agent/
-        └── 08_create_financial_agent.sql # Agent creation script
+        └── 08_create_financial_agent.sql  # Agent creation script
 ```
 
 ---
@@ -68,9 +71,115 @@ Consumer Cellular is an American Mobile Virtual Network Operator (MVNO) that pro
 4. `sql/views/04_create_views.sql`
 5. `sql/views/05_create_semantic_views.sql`
 6. `sql/search/06_create_cortex_search.sql`
-7. `notebooks/ml_financial_models.ipynb` (Optional - run in Snowflake Notebooks to train ML models)
+7. `notebooks/ml_financial_models.ipynb` (Optional - run in Snowflake Notebooks)
 8. `sql/models/07_ml_model_functions.sql`
 9. `sql/agent/08_create_financial_agent.sql`
+
+---
+
+## MANDATORY Documentation Requirements
+
+### README.md MUST Include:
+- Snowflake logo at the top: `![Snowflake](Snowflake_Logo.svg)`
+- Architecture diagram: `![System Architecture](docs/images/architecture.svg)`
+- Project structure diagram: `![Project Structure](docs/images/project_structure.svg)`
+- Deployment workflow diagram: `![Deployment Workflow](docs/images/deployment_flow.svg)`
+- ML models diagram: `![ML Pipeline](docs/images/ml_models.svg)`
+- Quick start instructions
+- Usage examples
+- Links to documentation files
+
+### DEPLOYMENT_SUMMARY.md MUST Include:
+- Architecture diagram reference
+- Deployment workflow diagram reference
+- ML models diagram reference
+- Tables showing all SQL scripts and their status
+- Data model relationships
+- Resource requirements
+
+### questions.md MUST Include:
+- At least 50 test questions organized by category
+- Customer analytics questions
+- Revenue and billing questions
+- Churn and retention questions
+- Support and satisfaction questions
+- Complex multi-part questions
+- Knowledge base questions
+
+---
+
+## MANDATORY SVG Image Requirements
+
+### CRITICAL: NEVER use text-based graphics (ASCII art, code blocks with tree structures)
+### ALWAYS create proper SVG images for:
+- Architecture diagrams
+- Deployment workflows
+- ML model pipelines
+- Project structure
+
+### SVG Technical Requirements:
+
+1. **Use compatible shadow filters:**
+```xml
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+  <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+  <feOffset in="blur" dx="2" dy="2" result="offsetBlur"/>
+  <feFlood flood-color="#000000" flood-opacity="0.2" result="color"/>
+  <feComposite in="color" in2="offsetBlur" operator="in" result="shadow"/>
+  <feMerge>
+    <feMergeNode in="shadow"/>
+    <feMergeNode in="SourceGraphic"/>
+  </feMerge>
+</filter>
+```
+
+2. **DO NOT use feDropShadow** - causes encoding errors
+
+3. **DO NOT use Unicode characters** (checkmarks, special symbols) - causes btoa encoding errors
+
+4. **Ensure viewBox is large enough** - expand height to fit ALL content, do not cut off elements
+
+5. **Element positioning:**
+   - Numbered circles must be ABOVE or BESIDE description boxes, NEVER underneath
+   - Elements must NOT overlap - calculate positions carefully
+   - Leave adequate spacing between parallel elements
+
+6. **Add shadows to ALL boxes** using the compatible filter above
+
+### architecture.svg MUST Include:
+- Business Users layer at top
+- Agent box (DO NOT include specific model names like "Claude 3.5 Sonnet")
+- Three tool boxes: ANALYST_TOOL, SEARCH_TOOL, ML FUNCTIONS
+- Semantic View and Search Service boxes
+- ML Functions detail box listing all UDFs
+- Data layer showing ALL tables
+- Connection arrows between layers
+- Shadows on all boxes
+
+### deployment_flow.svg MUST Include:
+- ALL 8 SQL script steps numbered and labeled
+- ML Notebook step (marked as optional, with different color)
+- Parallel execution paths where applicable (steps 6, NB, 7 run in parallel)
+- Merge point before final step
+- Legend showing step types
+- Shadows on all boxes
+- Numbered circles ABOVE or BESIDE (not underneath) description boxes
+
+### ml_models.svg MUST Include:
+- All ML functions as separate boxes
+- Input parameters for each function
+- Output values for each function
+- Color coding for inputs vs outputs
+- Legend
+
+### project_structure.svg MUST Include:
+- EVERY file in the project - no wildcards, no abbreviations
+- Root level files (README.md, Snowflake_Logo.svg, agent.md)
+- All SQL folders and their files
+- Notebooks folder and files
+- Docs folder, all markdown files, AND images subfolder with ALL SVG files
+- Color coding by file type
+- Legend
 
 ---
 
@@ -244,6 +353,54 @@ $$;
 - Search for conflict markers before marking files complete
 - Test SQL files compile before considering them done
 
+### 6. NEVER USE TEXT-BASED GRAPHICS
+
+**What went wrong:** Used ASCII art and code blocks to represent diagrams instead of proper SVG images.
+
+**Correct approach:**
+- ALWAYS create SVG files for ALL diagrams
+- Reference SVG files in markdown using `![Description](path/to/image.svg)`
+- Never use code blocks with tree structures or box-drawing characters
+
+### 7. SVG IMAGES MUST BE COMPLETE
+
+**What went wrong:** 
+- Cut off content by not sizing viewBox correctly
+- Used wildcards like `*.svg` instead of listing every file
+- Overlapped elements by poor positioning
+- Placed numbered circles underneath description boxes where they couldn't be seen
+- Forgot to include ML notebook in deployment flow
+- Forgot to include ML functions in architecture diagram
+- Included specific model names that shouldn't be shown
+
+**Correct approach:**
+- Calculate viewBox height to fit ALL content with padding
+- List EVERY file explicitly - no wildcards or abbreviations
+- Calculate element positions to prevent ANY overlap
+- Place numbered circles ABOVE or BESIDE boxes, never underneath
+- Include ALL steps in deployment flow including notebooks
+- Include ALL components in architecture including ML functions
+- Use generic descriptions (e.g., "Cortex Agent") not specific model names
+
+### 8. ADD SHADOWS TO ALL BOXES IN SVG
+
+**What went wrong:** Created flat boxes without shadows, making diagrams look unprofessional.
+
+**Correct approach:**
+- Add `filter="url(#shadow)"` to ALL rect elements
+- Use compatible shadow filter (feGaussianBlur + feOffset + feMerge)
+- Do NOT use feDropShadow (causes encoding errors)
+
+### 9. DIRECTORY STRUCTURE MUST BE EXACT
+
+**What went wrong:** Created files in wrong directories or with wrong naming.
+
+**Correct approach:**
+- Follow the exact directory structure specified in this document
+- Use the exact file names specified
+- Create ALL directories before creating files
+- Verify structure with `ls -R` after creation
+
 ---
 
 ## Component Templates
@@ -314,12 +471,28 @@ AS
 - [ ] Check for merge conflicts after any file operations
 - [ ] Complete TODO list for every component
 
+### Documentation & Images (MANDATORY)
+- [ ] Create README.md with Snowflake logo and all diagrams
+- [ ] Create docs/AGENT_SETUP.md with step-by-step guide
+- [ ] Create docs/DEPLOYMENT_SUMMARY.md with all diagrams
+- [ ] Create docs/questions.md with 50+ test questions
+- [ ] Create docs/images/architecture.svg (with shadows, ML functions, all tables)
+- [ ] Create docs/images/deployment_flow.svg (with shadows, all steps including notebook)
+- [ ] Create docs/images/ml_models.svg (with shadows, all functions)
+- [ ] Create docs/images/project_structure.svg (with shadows, EVERY file listed)
+- [ ] Verify NO text-based graphics anywhere in markdown files
+- [ ] Verify ALL SVG elements have shadows
+- [ ] Verify NO elements overlap in SVG files
+- [ ] Verify viewBox is large enough to show ALL content
+- [ ] Verify NO Unicode special characters in SVG files
+
 ### Before Delivery
 - [ ] Run all SQL files in order (01-08)
 - [ ] Test agent creation succeeds
 - [ ] Verify agent responds to sample questions
 - [ ] Update documentation with customer-specific details
 - [ ] Remove any placeholder values
+- [ ] Verify all SVG images render correctly
 
 ---
 
@@ -335,8 +508,9 @@ AS
 ## Version History
 
 - **v1.0** - Initial template based on previous Intelligence Agent project
+- **v2.0** - Added mandatory SVG requirements, documentation requirements, and lessons learned from Consumer Cellular project
 - **Created:** February 2026
-- **Lessons Learned:** Documented from previous project issues
+- **Updated:** February 2026
 
 ---
 
@@ -348,6 +522,17 @@ AS
 5. Leave merge conflicts in files
 6. Mark tasks complete before verifying they work
 7. Assume you know Snowflake syntax without checking
+8. Use text-based graphics (ASCII art, code block trees) - USE SVG
+9. Use wildcards or abbreviations in project structure diagrams - LIST EVERY FILE
+10. Use feDropShadow in SVG - causes encoding errors
+11. Use Unicode special characters in SVG - causes encoding errors
+12. Place numbered circles underneath description boxes - they must be visible
+13. Overlap elements in SVG diagrams - calculate positions carefully
+14. Cut off content by using too small viewBox - expand to fit ALL content
+15. Forget to add ML notebook to deployment flow diagram
+16. Forget to add ML functions to architecture diagram
+17. Include specific model names (like "Claude 3.5 Sonnet") in diagrams
+18. Create flat boxes without shadows in SVG
 
 ## DO:
 1. Use `snowflake_product_docs` before writing SQL
@@ -357,4 +542,14 @@ AS
 5. Test each file compiles before moving on
 6. Complete ALL files before stopping
 7. Verify no merge conflicts exist
-8. Always create documentation as described in the details above
+8. Create ALL documentation files as specified
+9. Create ALL SVG images as specified
+10. Add shadows to ALL boxes in SVG using compatible filter
+11. List EVERY file in project structure diagram
+12. Include ALL steps in deployment flow (including notebook)
+13. Include ALL components in architecture (including ML functions)
+14. Use generic descriptions not specific model names in diagrams
+15. Position numbered circles ABOVE or BESIDE description boxes
+16. Calculate element positions to prevent overlap
+17. Size viewBox large enough to fit ALL content with padding
+18. Verify SVG renders correctly before marking complete
