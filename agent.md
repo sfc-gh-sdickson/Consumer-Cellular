@@ -357,3 +357,4 @@ AS
 5. Test each file compiles before moving on
 6. Complete ALL files before stopping
 7. Verify no merge conflicts exist
+8. Always create documentation as described in the details above

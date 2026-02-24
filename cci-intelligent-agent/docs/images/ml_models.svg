@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650">
+  <defs>
+    <linearGradient id="modelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EC4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F472B6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="inputGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60A5FA;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="outputGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34D399;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="650" fill="#F8FAFC"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1E293B" text-anchor="middle">ML Model Pipeline</text>
+  
+  <!-- PREDICT_CHURN Model -->
+  <rect x="50" y="80" width="380" height="250" rx="10" fill="white" stroke="#E2E8F0" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="50" y="80" width="380" height="40" rx="10" fill="url(#modelGrad)"/>
+  <text x="240" y="107" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">PREDICT_CHURN()</text>
+  
+  <!-- Inputs -->
+  <text x="70" y="145" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#475569">Inputs:</text>
+  <rect x="70" y="155" width="150" height="25" rx="4" fill="#DBEAFE"/>
+  <text x="145" y="172" font-family="Arial, sans-serif" font-size="10" fill="#1E40AF" text-anchor="middle">customer_id</text>
+  <rect x="70" y="185" width="150" height="25" rx="4" fill="#DBEAFE"/>
+  <text x="145" y="202" font-family="Arial, sans-serif" font-size="10" fill="#1E40AF" text-anchor="middle">tenure_months</text>
+  <rect x="70" y="215" width="150" height="25" rx="4" fill="#DBEAFE"/>
+  <text x="145" y="232" font-family="Arial, sans-serif" font-size="10" fill="#1E40AF" text-anchor="middle">avg_monthly_revenue</text>
+  <rect x="70" y="245" width="150" height="25" rx="4" fill="#DBEAFE"/>
+  <text x="145" y="262" font-family="Arial, sans-serif" font-size="10" fill="#1E40AF" text-anchor="middle">support_ticket_count</text>
+  <rect x="70" y="275" width="150" height="25" rx="4" fill="#DBEAFE"/>
+  <text x="145" y="292" font-family="Arial, sans-serif" font-size="10" fill="#1E40AF" text-anchor="middle">late_payment_count</text>
+  
+  <!-- Outputs -->
+  <text x="250" y="145" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#475569">Outputs:</text>
+  <rect x="250" y="155" width="160" height="25" rx="4" fill="#D1FAE5"/>
+  <text x="330" y="172" font-family="Arial, sans-serif" font-size="10" fill="#065F46" text-anchor="middle">churn_probability</text>
+  <rect x="250" y="185" width="160" height="25" rx="4" fill="#D1FAE5"/>
+  <text x="330" y="202" font-family="Arial, sans-serif" font-size="10" fill="#065F46" text-anchor="middle">risk_level</text>
+  <rect x="250" y="215" width="160" height="25" rx="4" fill="#D1FAE5"/>
+  <text x="330" y="232" font-family="Arial, sans-serif" font-size="10" fill="#065F46" text-anchor="middle">recommended_action</text>
+  
+  <!-- CALCULATE_LTV Model -->
+  <rect x="470" y="80" width="380" height="250" rx="10" fill="white" stroke="#E2E8F0" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="470" y="80" width="380" height="40" rx="10" fill="url(#modelGrad)"/>
+  <text x="660" y="107" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">CALCULATE_LTV()</text>
+  
+  <!-- Inputs -->
+  <text x="490" y="145" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#475569">Inputs:</text>
+  <rect x="490" y="155" width="150" height="25" rx="4" fill="#DBEAFE"/>
+  <text x="565" y="172" font-family="Arial, sans-serif" font-size="10" fill="#1E40AF" text-anchor="middle">customer_id</text>
+  <rect x="490" y="185" width="150" height="25" rx="4" fill="#DBEAFE"/>
+  <text x="565" y="202" font-family="Arial, sans-serif" font-size="10" fill="#1E40AF" text-anchor="middle">historical_revenue</text>
+  <rect x="490" y="215" width="150" height="25" rx="4" fill="#DBEAFE"/>
+  <text x="565" y="232" font-family="Arial, sans-serif" font-size="10" fill="#1E40AF" text-anchor="middle">tenure_months</text>
+  <rect x="490" y="245" width="150" height="25" rx="4" fill="#DBEAFE"/>
+  <text x="565" y="262" font-family="Arial, sans-serif" font-size="10" fill="#1E40AF" text-anchor="middle">churn_probability</text>
+  
+  <!-- Outputs -->
+  <text x="670" y="145" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#475569">Outputs:</text>
+  <rect x="670" y="155" width="160" height="25" rx="4" fill="#D1FAE5"/>
+  <text x="750" y="172" font-family="Arial, sans-serif" font-size="10" fill="#065F46" text-anchor="middle">avg_monthly_revenue</text>
+  <rect x="670" y="185" width="160" height="25" rx="4" fill="#D1FAE5"/>
+  <text x="750" y="202" font-family="Arial, sans-serif" font-size="10" fill="#065F46" text-anchor="middle">predicted_lifetime_months</text>
+  <rect x="670" y="215" width="160" height="25" rx="4" fill="#D1FAE5"/>
+  <text x="750" y="232" font-family="Arial, sans-serif" font-size="10" fill="#065F46" text-anchor="middle">predicted_ltv</text>
+  <rect x="670" y="245" width="160" height="25" rx="4" fill="#D1FAE5"/>
+  <text x="750" y="262" font-family="Arial, sans-serif" font-size="10" fill="#065F46" text-anchor="middle">ltv_segment</text>
+  
+  <!-- RECOMMEND_PLAN Model -->
+  <rect x="50" y="370" width="380" height="250" rx="10" fill="white" stroke="#E2E8F0" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="50" y="370" width="380" height="40" rx="10" fill="url(#modelGrad)"/>
+  <text x="240" y="397" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">RECOMMEND_PLAN()</text>
+  
+  <!-- Inputs -->
+  <text x="70" y="435" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#475569">Inputs:</text>
+  <rect x="70" y="445" width="150" height="25" rx="4" fill="#DBEAFE"/>
+  <text x="145" y="462" font-family="Arial, sans-serif" font-size="10" fill="#1E40AF" text-anchor="middle">current_plan_type</text>
+  <rect x="70" y="475" width="150" height="25" rx="4" fill="#DBEAFE"/>
+  <text x="145" y="492" font-family="Arial, sans-serif" font-size="10" fill="#1E40AF" text-anchor="middle">avg_data_usage_gb</text>
+  <rect x="70" y="505" width="150" height="25" rx="4" fill="#DBEAFE"/>
+  <text x="145" y="522" font-family="Arial, sans-serif" font-size="10" fill="#1E40AF" text-anchor="middle">avg_talk_minutes</text>
+  <rect x="70" y="535" width="150" height="25" rx="4" fill="#DBEAFE"/>
+  <text x="145" y="552" font-family="Arial, sans-serif" font-size="10" fill="#1E40AF" text-anchor="middle">avg_overage_charges</text>
+  
+  <!-- Outputs -->
+  <text x="250" y="435" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#475569">Outputs:</text>
+  <rect x="250" y="445" width="160" height="25" rx="4" fill="#D1FAE5"/>
+  <text x="330" y="462" font-family="Arial, sans-serif" font-size="10" fill="#065F46" text-anchor="middle">recommended_plan</text>
+  <rect x="250" y="475" width="160" height="25" rx="4" fill="#D1FAE5"/>
+  <text x="330" y="492" font-family="Arial, sans-serif" font-size="10" fill="#065F46" text-anchor="middle">reason</text>
+  <rect x="250" y="505" width="160" height="25" rx="4" fill="#D1FAE5"/>
+  <text x="330" y="522" font-family="Arial, sans-serif" font-size="10" fill="#065F46" text-anchor="middle">estimated_savings</text>
+  
+  <!-- CALCULATE_HEALTH_SCORE Model -->
+  <rect x="470" y="370" width="380" height="250" rx="10" fill="white" stroke="#E2E8F0" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="470" y="370" width="380" height="40" rx="10" fill="url(#modelGrad)"/>
+  <text x="660" y="397" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">CALCULATE_HEALTH_SCORE()</text>
+  
+  <!-- Inputs -->
+  <text x="490" y="435" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#475569">Inputs:</text>
+  <rect x="490" y="445" width="150" height="25" rx="4" fill="#DBEAFE"/>
+  <text x="565" y="462" font-family="Arial, sans-serif" font-size="10" fill="#1E40AF" text-anchor="middle">ltv_segment</text>
+  <rect x="490" y="475" width="150" height="25" rx="4" fill="#DBEAFE"/>
+  <text x="565" y="492" font-family="Arial, sans-serif" font-size="10" fill="#1E40AF" text-anchor="middle">churn_risk_level</text>
+  <rect x="490" y="505" width="150" height="25" rx="4" fill="#DBEAFE"/>
+  <text x="565" y="522" font-family="Arial, sans-serif" font-size="10" fill="#1E40AF" text-anchor="middle">auto_pay_enabled</text>
+  <rect x="490" y="535" width="150" height="25" rx="4" fill="#DBEAFE"/>
+  <text x="565" y="552" font-family="Arial, sans-serif" font-size="10" fill="#1E40AF" text-anchor="middle">tenure / satisfaction</text>
+  
+  <!-- Outputs -->
+  <text x="670" y="435" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#475569">Outputs:</text>
+  <rect x="670" y="445" width="160" height="25" rx="4" fill="#D1FAE5"/>
+  <text x="750" y="462" font-family="Arial, sans-serif" font-size="10" fill="#065F46" text-anchor="middle">health_score (0-100)</text>
+  <rect x="670" y="475" width="160" height="25" rx="4" fill="#D1FAE5"/>
+  <text x="750" y="492" font-family="Arial, sans-serif" font-size="10" fill="#065F46" text-anchor="middle">health_category</text>
+  <rect x="670" y="505" width="160" height="25" rx="4" fill="#D1FAE5"/>
+  <text x="750" y="522" font-family="Arial, sans-serif" font-size="10" fill="#065F46" text-anchor="middle">improvement_suggestions</text>
+  
+  <!-- Legend -->
+  <rect x="320" y="640" width="260" height="40" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="340" y="652" width="20" height="15" rx="2" fill="#DBEAFE"/>
+  <text x="375" y="663" font-family="Arial, sans-serif" font-size="10" fill="#64748B">Input Parameters</text>
+  <rect x="460" y="652" width="20" height="15" rx="2" fill="#D1FAE5"/>
+  <text x="495" y="663" font-family="Arial, sans-serif" font-size="10" fill="#64748B">Output Values</text>
+</svg>
