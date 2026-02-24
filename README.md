@@ -1,4 +1,4 @@
-![Snowflake](Snowflake_Logo.svg)
+<img src="Snowflake_Logo.svg" width="200">
 
 # Consumer Cellular Intelligence Agent
 
@@ -19,31 +19,7 @@ A Snowflake Cortex Agent solution for customer analytics, financial insights, an
 
 ## Project Structure
 
-```
-.
-├── sql/
-│   ├── setup/
-│   │   ├── 01_database_and_schema.sql
-│   │   └── 02_create_tables.sql
-│   ├── data/
-│   │   └── 03_generate_synthetic_data.sql
-│   ├── views/
-│   │   ├── 04_create_views.sql
-│   │   └── 05_create_semantic_views.sql
-│   ├── search/
-│   │   └── 06_create_cortex_search.sql
-│   ├── models/
-│   │   └── 07_ml_model_functions.sql
-│   └── agent/
-│       └── 08_create_financial_agent.sql
-├── notebooks/
-│   └── ml_financial_models.ipynb
-└── docs/
-    ├── AGENT_SETUP.md
-    ├── DEPLOYMENT_SUMMARY.md
-    ├── questions.md
-    └── images/
-```
+![Project Structure](docs/images/project_structure.svg)
 
 ## Deployment
 

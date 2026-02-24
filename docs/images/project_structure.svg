@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 650">
+  <defs>
+    <linearGradient id="folderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FBBF24;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sqlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60A5FA;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="notebookGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34D399;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="docsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A78BFA;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="700" height="650" fill="#F8FAFC"/>
+  
+  <text x="350" y="35" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1E293B" text-anchor="middle">Project Structure</text>
+  
+  <!-- Root -->
+  <rect x="30" y="60" width="80" height="30" rx="4" fill="url(#folderGrad)"/>
+  <text x="70" y="80" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">/</text>
+  
+  <!-- SQL Folder -->
+  <line x1="70" y1="90" x2="70" y2="110" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="70" y1="110" x2="100" y2="110" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="100" y="95" width="80" height="30" rx="4" fill="url(#sqlGrad)"/>
+  <text x="140" y="115" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">sql/</text>
+  
+  <!-- SQL Subfolders -->
+  <line x1="140" y1="125" x2="140" y2="145" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="140" y1="145" x2="170" y2="145" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="170" y="130" width="80" height="30" rx="4" fill="#DBEAFE"/>
+  <text x="210" y="150" font-family="Arial, sans-serif" font-size="11" fill="#1E40AF" text-anchor="middle">setup/</text>
+  
+  <!-- Setup files -->
+  <line x1="210" y1="160" x2="210" y2="175" stroke="#CBD5E1" stroke-width="1"/>
+  <line x1="210" y1="175" x2="280" y2="175" stroke="#CBD5E1" stroke-width="1"/>
+  <rect x="280" y="163" width="200" height="24" rx="3" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="380" y="180" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">01_database_and_schema.sql</text>
+  
+  <line x1="210" y1="175" x2="210" y2="200" stroke="#CBD5E1" stroke-width="1"/>
+  <line x1="210" y1="200" x2="280" y2="200" stroke="#CBD5E1" stroke-width="1"/>
+  <rect x="280" y="188" width="200" height="24" rx="3" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="380" y="205" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">02_create_tables.sql</text>
+  
+  <!-- Data folder -->
+  <line x1="140" y1="145" x2="140" y2="235" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="140" y1="235" x2="170" y2="235" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="170" y="220" width="80" height="30" rx="4" fill="#DBEAFE"/>
+  <text x="210" y="240" font-family="Arial, sans-serif" font-size="11" fill="#1E40AF" text-anchor="middle">data/</text>
+  
+  <line x1="210" y1="250" x2="210" y2="265" stroke="#CBD5E1" stroke-width="1"/>
+  <line x1="210" y1="265" x2="280" y2="265" stroke="#CBD5E1" stroke-width="1"/>
+  <rect x="280" y="253" width="200" height="24" rx="3" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="380" y="270" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">03_generate_synthetic_data.sql</text>
+  
+  <!-- Views folder -->
+  <line x1="140" y1="235" x2="140" y2="300" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="140" y1="300" x2="170" y2="300" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="170" y="285" width="80" height="30" rx="4" fill="#DBEAFE"/>
+  <text x="210" y="305" font-family="Arial, sans-serif" font-size="11" fill="#1E40AF" text-anchor="middle">views/</text>
+  
+  <line x1="210" y1="315" x2="210" y2="330" stroke="#CBD5E1" stroke-width="1"/>
+  <line x1="210" y1="330" x2="280" y2="330" stroke="#CBD5E1" stroke-width="1"/>
+  <rect x="280" y="318" width="200" height="24" rx="3" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="380" y="335" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">04_create_views.sql</text>
+  
+  <line x1="210" y1="330" x2="210" y2="355" stroke="#CBD5E1" stroke-width="1"/>
+  <line x1="210" y1="355" x2="280" y2="355" stroke="#CBD5E1" stroke-width="1"/>
+  <rect x="280" y="343" width="200" height="24" rx="3" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="380" y="360" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">05_create_semantic_views.sql</text>
+  
+  <!-- Search folder -->
+  <line x1="140" y1="300" x2="140" y2="390" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="140" y1="390" x2="170" y2="390" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="170" y="375" width="80" height="30" rx="4" fill="#DBEAFE"/>
+  <text x="210" y="395" font-family="Arial, sans-serif" font-size="11" fill="#1E40AF" text-anchor="middle">search/</text>
+  
+  <line x1="210" y1="405" x2="210" y2="420" stroke="#CBD5E1" stroke-width="1"/>
+  <line x1="210" y1="420" x2="280" y2="420" stroke="#CBD5E1" stroke-width="1"/>
+  <rect x="280" y="408" width="200" height="24" rx="3" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="380" y="425" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">06_create_cortex_search.sql</text>
+  
+  <!-- Models folder -->
+  <line x1="140" y1="390" x2="140" y2="455" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="140" y1="455" x2="170" y2="455" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="170" y="440" width="80" height="30" rx="4" fill="#DBEAFE"/>
+  <text x="210" y="460" font-family="Arial, sans-serif" font-size="11" fill="#1E40AF" text-anchor="middle">models/</text>
+  
+  <line x1="210" y1="470" x2="210" y2="485" stroke="#CBD5E1" stroke-width="1"/>
+  <line x1="210" y1="485" x2="280" y2="485" stroke="#CBD5E1" stroke-width="1"/>
+  <rect x="280" y="473" width="200" height="24" rx="3" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="380" y="490" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">07_ml_model_functions.sql</text>
+  
+  <!-- Agent folder -->
+  <line x1="140" y1="455" x2="140" y2="520" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="140" y1="520" x2="170" y2="520" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="170" y="505" width="80" height="30" rx="4" fill="#DBEAFE"/>
+  <text x="210" y="525" font-family="Arial, sans-serif" font-size="11" fill="#1E40AF" text-anchor="middle">agent/</text>
+  
+  <line x1="210" y1="535" x2="210" y2="550" stroke="#CBD5E1" stroke-width="1"/>
+  <line x1="210" y1="550" x2="280" y2="550" stroke="#CBD5E1" stroke-width="1"/>
+  <rect x="280" y="538" width="200" height="24" rx="3" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="380" y="555" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">08_create_financial_agent.sql</text>
+  
+  <!-- Notebooks Folder -->
+  <line x1="70" y1="110" x2="70" y2="590" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="70" y1="590" x2="100" y2="590" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="100" y="575" width="100" height="30" rx="4" fill="url(#notebookGrad)"/>
+  <text x="150" y="595" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">notebooks/</text>
+  
+  <line x1="150" y1="605" x2="150" y2="620" stroke="#CBD5E1" stroke-width="1"/>
+  <line x1="150" y1="620" x2="280" y2="620" stroke="#CBD5E1" stroke-width="1"/>
+  <rect x="280" y="608" width="200" height="24" rx="3" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+  <text x="380" y="625" font-family="monospace" font-size="10" fill="#065F46" text-anchor="middle">ml_financial_models.ipynb</text>
+  
+  <!-- Docs Folder -->
+  <line x1="70" y1="590" x2="70" y2="660" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="70" y1="660" x2="100" y2="660" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="100" y="645" width="80" height="30" rx="4" fill="url(#docsGrad)"/>
+  <text x="140" y="665" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">docs/</text>
+  
+  <!-- Legend -->
+  <rect x="520" y="60" width="160" height="120" rx="6" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="600" y="82" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1E293B" text-anchor="middle">Legend</text>
+  <rect x="535" y="95" width="16" height="16" rx="2" fill="url(#sqlGrad)"/>
+  <text x="600" y="107" font-family="Arial, sans-serif" font-size="10" fill="#64748B" text-anchor="middle">SQL Scripts</text>
+  <rect x="535" y="118" width="16" height="16" rx="2" fill="url(#notebookGrad)"/>
+  <text x="600" y="130" font-family="Arial, sans-serif" font-size="10" fill="#64748B" text-anchor="middle">Notebooks</text>
+  <rect x="535" y="141" width="16" height="16" rx="2" fill="url(#docsGrad)"/>
+  <text x="600" y="153" font-family="Arial, sans-serif" font-size="10" fill="#64748B" text-anchor="middle">Documentation</text>
+</svg>
