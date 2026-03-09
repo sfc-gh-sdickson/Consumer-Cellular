@@ -553,3 +553,4 @@ AS
 16. Calculate element positions to prevent overlap
 17. Size viewBox large enough to fit ALL content with padding
 18. Verify SVG renders correctly before marking complete
+19. Always generate 3 Semantic Views, 3 Cortex Searches & 3 ML Models
